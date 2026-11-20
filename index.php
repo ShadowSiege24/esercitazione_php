@@ -78,6 +78,17 @@
     <title>Esercitazione PHP: Spesa</title>
 </head>
 <body>
-    
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
