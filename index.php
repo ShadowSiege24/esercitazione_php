@@ -43,6 +43,7 @@
                 $report[$categoria] = [
                     "totale_vendite" => 0,
                     "numero_transazioni" => 0,
+                    "importo_medio" => 0,
                     "prodotti" => []
                 ];
             }
@@ -53,17 +54,19 @@
             $report[$categoria]["prodotti"][] = $prodotto;
         };
 
+        foreach($report as $categoria => $dati){
+            $report[$categoria]["importo_medio"] = $dati["totale_vendite"] / $dati["numero_transazioni"];
+        }
+
         return $report;
 
     };
 
-    $report[] = aggiungiReport($vendite);
+    $report = aggiungiReport($vendite);
 
     echo("<pre>");
         print_r($report);
     echo("</pre>") ;
-
-    $media_elettronica = $report["Elettronica"]["totale_vendite"] / $report["Elettronica"]["numero_transazioni"];
     
 ?>
 
@@ -72,7 +75,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Document</title>
+    <title>Esercitazione PHP: Spesa</title>
 </head>
 <body>
     
