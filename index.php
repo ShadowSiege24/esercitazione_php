@@ -81,13 +81,23 @@
     <table>
         <thead>
             <tr>
-                <th></th>
+                <th>Categoria</th>
+                <th>Totale vendite</th>
+                <th>Numero transazioni</th>
+                <th>Importo medio</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-            </tr>
+            
+                <?php foreach ($report as $categoria => $dati): ?>
+                    <tr>
+                        <td><?= $categoria ?></td>
+                        <td><?= $dati["totale_vendite"] ?></td>
+                        <td><?= $dati["numero_transazioni"] ?></td>
+                        <td><?= $dati["importo_medio"] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            
         </tbody>
     </table>
 </body>
